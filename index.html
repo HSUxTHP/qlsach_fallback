@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Đang Bảo Trì</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background: #000;
@@ -13,7 +18,16 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
             display: flex;
-            line-height: 2.2; /* tăng khoảng cách hàng */
+            line-height: 2.2;
+            /* tăng khoảng cách hàng */
+            -webkit-user-select: none;
+            /* Chrome, Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE10+ */
+            user-select: none;
+            /* chuẩn */
         }
 
         .wrapper {
@@ -26,22 +40,26 @@
         /* ===== HEADER / FOOTER STRIPE ===== */
         .stripe {
             width: 100%;
-            height: 80px; /* chiều cao của dải */
+            height: 80px;
+            /* chiều cao của dải */
             background:
-                repeating-linear-gradient(
-                    -45deg,
+                repeating-linear-gradient(-45deg,
                     #dd0d0d 0,
                     #dd0d0d 15px,
                     transparent 15px,
-                    transparent 30px
-                );
+                    transparent 30px);
             background-size: 201.6% 100%;
             animation: moveStripe 15s linear infinite;
         }
 
         @keyframes moveStripe {
-            from { background-position: 200% 0; }
-            to   { background-position: 0 0; }
+            from {
+                background-position: 200% 0;
+            }
+
+            to {
+                background-position: 0 0;
+            }
         }
 
         .container {
@@ -53,7 +71,11 @@
         }
 
         /* ===== TEXT EFFECT: đỏ mạnh, phát sáng mạnh ===== */
-        body, p, h1, .english, .box {
+        body,
+        p,
+        h1,
+        .english,
+        .box {
             color: #ff6666 !important;
             text-shadow:
                 0 0 6px #ff0000,
@@ -85,126 +107,136 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* ===== H1 với icon cảnh báo trước và sau ===== */
 
 
-    h1 {
-        position: relative;
-        font-size: 48px;
-        color: #ff4444;
-        text-shadow:
-            0 0 10px #ff0000,
-            0 0 20px #ff0000,
-            0 0 30px #ff0000;
-    }
+        h1 {
+            position: relative;
+            font-size: 48px;
+            color: #ff4444;
+            text-shadow:
+                0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+        }
 
 
-    /* Container icon trái */
-    h1::before {
-        content: "";
-        position: absolute;
-        left: -65px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background: #ff4444;
-        clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
-        filter: drop-shadow(0 0 12px #ff0000);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0 10px #ff0000,
-            0 0 20px #ff0000,
-            0 0 30px #ff0000;
-    }
+        /* Container icon trái */
+        h1::before {
+            content: "";
+            position: absolute;
+            left: -65px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #ff4444;
+            clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
+            filter: drop-shadow(0 0 12px #ff0000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+        }
 
-    /* Dấu ! trong icon trái */
-    h1::after {
-        content: "!";
-        position: absolute;
-        left: -49px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 22px;
-        color: #000;
-        pointer-events: none;
-        text-shadow:
-        0 0 10px #ff0000,
-        0 0 20px #ff0000,
-        0 0 30px #ff0000;
-    }
+        /* Dấu ! trong icon trái */
+        h1::after {
+            content: "!";
+            position: absolute;
+            left: -49px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+            color: #000;
+            pointer-events: none;
+            text-shadow:
+                0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+        }
 
-    /* Container icon phải */
-    h1 span::before {
-        content: "";
-        position: absolute;
-        right: -65px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background: #ff4444;
-        clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
-        filter: drop-shadow(0 0 12px #ff0000);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0 10px #ff0000,
-            0 0 20px #ff0000,
-            0 0 30px #ff0000;
-    }
+        /* Container icon phải */
+        h1 span::before {
+            content: "";
+            position: absolute;
+            right: -65px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #ff4444;
+            clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
+            filter: drop-shadow(0 0 12px #ff0000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+        }
 
-    /* Dấu ! trong icon phải */
-    h1 span::after {
-        content: "!";
-        position: absolute;
-        right: -48px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 22px;
-        color: #000;
-        pointer-events: none;
-        text-shadow:
-        0 0 10px #ff0000,
-        0 0 20px #ff0000,
-        0 0 30px #ff0000;
-    }
+        /* Dấu ! trong icon phải */
+        h1 span::after {
+            content: "!";
+            position: absolute;
+            right: -48px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+            color: #000;
+            pointer-events: none;
+            text-shadow:
+                0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+        }
 
         hr {
             border-color: #550000;
             margin: 35px 0;
         }
-
     </style>
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('copy', e => e.preventDefault());
+    </script>
+
 </head>
-<body>
 
-<div class="wrapper">
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" oncopy="return false">
 
-    <div class="stripe"></div>
+    <div class="wrapper">
 
-    <div class="container">
-        <div class="box">
+        <div class="stripe"></div>
 
-            <h1><span></span>TRANG WEB HIỆN ĐANG TẠM THỜI GIÁN ĐOẠN<span></span></h1>
-            <p class="warning">Nếu bạn vô tình truy cập vào trang này, xin đừng truy cập lại / If you reached this page by mistake, please do not access it again</p>
+        <div class="container">
+            <div class="box">
 
-            <hr>
-            <p>Chúng tôi đang làm việc để khắc phục sự cố và sẽ sớm quay trở lại</p>
-            
-            <p class="english">The website is temporarily down. We are working to fix the issue.</p>
+                <h1><span></span>TRANG WEB HIỆN ĐANG TẠM THỜI GIÁN ĐOẠN<span></span></h1>
+                <p class="warning">Nếu bạn vô tình truy cập vào trang này, xin đừng truy cập lại / If you reached this
+                    page by mistake, please do not access it again</p>
 
-            <div class="warning"></div>
+                <hr>
+                <p>Chúng tôi đang làm việc để khắc phục sự cố và sẽ sớm quay trở lại</p>
+
+                <p class="english">The website is temporarily down. We are working to fix the issue.</p>
+
+                <div class="warning"></div>
+            </div>
         </div>
+
+        <div class="stripe"></div>
+
     </div>
 
-    <div class="stripe"></div>
-
-</div>
-
 </body>
+
 </html>
